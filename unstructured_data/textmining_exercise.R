@@ -20,10 +20,15 @@ library(qgraph)
 library(lsa)
 library(stringr)
 library(mclust)
+library(readr)  # for read_csv
+
 
 #Carregando os dados com os textos originais
 #setwd('F:/WAGNER 14.03')
-text <- readLines("/Users/Joao/Git/courses/unstructured_data/exercise_textmining.csv")
+github<-"https://raw.githubusercontent.com/joaovissoci/courses/master/unstructured_data/exercise_textmining.csv"
+text <- read_csv(github)
+
+# text <- readLines("/Users/Joao/Git/courses/unstructured_data/exercise_textmining.csv")
 text <- text[-(1)] #removendo a primeira linha 'history'
 View(text)
 
@@ -35,8 +40,9 @@ View(text)
 #Corpus
 df <- data.frame(text, stringsAsFactors=FALSE)
 
+
 #View(df)
-corpus <- Corpus(VectorSource(df$text))
+corpus <- Corpus(VectorSource(text))
 corpus
 
 #Limpando os dados
