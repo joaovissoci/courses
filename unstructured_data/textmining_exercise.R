@@ -29,7 +29,7 @@ github<-"https://raw.githubusercontent.com/joaovissoci/courses/master/unstructur
 text <- read_csv(github)
 
 # text <- readLines("/Users/Joao/Git/courses/unstructured_data/exercise_textmining.csv")
-text <- text[-(1)] #removendo a primeira linha 'history'
+# text <- text[-(1)] #removendo a primeira linha 'history'
 View(text)
 
 # #removendo casos de 'line abuse' e 'null'
