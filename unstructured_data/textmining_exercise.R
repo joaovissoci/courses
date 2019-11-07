@@ -42,7 +42,7 @@ df <- data.frame(text, stringsAsFactors=FALSE)
 
 
 #View(df)
-corpus <- Corpus(VectorSource(text))
+corpus <- Corpus(VectorSource(df$text))
 corpus
 
 #Limpando os dados
