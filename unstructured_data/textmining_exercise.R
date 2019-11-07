@@ -30,7 +30,7 @@ text <- read_csv(github)
 
 # text <- readLines("/Users/Joao/Git/courses/unstructured_data/exercise_textmining.csv")
 # text <- text[-(1)] #removendo a primeira linha 'history'
-View(text)
+View(df)
 
 # #removendo casos de 'line abuse' e 'null'
 # text <- Filter(function (x) str_detect(x, "line abuse", negate=TRUE), text)
@@ -42,7 +42,7 @@ df <- data.frame(text, stringsAsFactors=FALSE)
 
 
 #View(df)
-corpus <- Corpus(VectorSource(df$text))
+corpus <- Corpus(VectorSource(df$x))
 corpus
 
 #Limpando os dados
@@ -160,9 +160,9 @@ qgraph(cor_t,layout="spring",labels=colnames(cor_t),threshold=0.3)
 ################################################################################
 # Análise por cluster
 #Corpus
-df_c1 <- data.frame(table_final$originalText[which(table_final$class==1)], stringsAsFactors=FALSE)
+df_c1 <- data.frame(table_final$x[which(table_final$class==1)], stringsAsFactors=TRUE)
 # View(df_c1)
-corpus_c1 <- VCorpus(VectorSource(df_c1$table_final.originalText.which.table_final.class....1..))
+corpus_c1 <- VCorpus(VectorSource(df_c1$table_final.x.which.table_final.class....1..))
 
 # apenas minusculas
 corpus_c1 <- tm_map(corpus_c1, tolower)
